@@ -33,7 +33,7 @@ With this project, Aras has a few federated object which are querying Gitlab thr
 7. Select Type = **Merge** and Mode = **Thorough Mode**.
 8. Click **Import** in the top left corner.
 9. Close the Aras Package Import tool.
-10. Copy `..\PLM-ALM-with-GitLab\Innovator` in your install folder
+10. Copy `..\PLM-ALM-with-GitLab\Innovator` in your install folder. **WARNING** The method-config.xml file has been modified. If you have made some changes yourself make sure to do a merge (using tools like winmerge for example)
   * _Note: by default c:/Program Files/Aras/Innovator/
 11. Edit the following variables with connection information for you GitLab platform.
    1. **SFT_gitlabToken** 
