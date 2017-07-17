@@ -1,0 +1,195 @@
+﻿<AML>
+ <Item type="Method" id="37073CA1C5E1422BB7526D27A85F6146" action="add">
+  <comments />
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[require([
+    "./gitgraph/gitgraph.min.js",
+    "./gitgraph/lodash.js"
+], function() {
+    
+    var myTemplateConfig = {
+  colors: [ "#66ff66", "#00ffff", "#9999ff", "#ff6699", "#ff9966", "#3399ff", "#ff3300" ], // branches colors, 1 per column
+  branch: {
+    lineWidth: 6,
+    spacingX: 40,
+    showLabel: true,                  // display branch names on graph
+  },
+  commit: {
+    spacingY: -50,
+    dot: {
+      size: 10
+    },
+    message: {
+      displayAuthor: true,
+      displayBranch: false,
+      displayHash: false,
+      font: "normal 12pt Arial"
+    },
+    shouldDisplayTooltipsInCompactMode: true, // default = true
+    tooltipHTMLFormatter: function ( commit ) {
+      return "" + commit.sha1 + "" + ": " + commit.message;
+    }
+  }
+};
+    
+    var gitgraph = new GitGraph({
+      template: myTemplateConfig,
+      orientation: "horizontal-reverse",
+      mode: "extended"
+    });
+    
+    
+    var inn = document.thisItem.getInnovator();
+    
+    var commits = inn.applyMethod("SFT_getGitLabCommits","<source_id>"+document.thisItem.getID()+"</source_id>");
+    
+    var nodesStore = [];
+    var placedNodes = [];
+    var branchesBucket = [];
+    var branches = [];
+    var iteration = 0;
+    var iterationCheck = 0;
+    for (var i = 0; i<commits.getItemCount();i++){
+        var commit = commits.getItemByIndex(i);
+        nodesStore.push({
+            'id': commit.getProperty("short_id"),
+            'full_id' :commit.getProperty("full_id"),
+            'message':  commit.getProperty("message",""),
+            'author': commit.getProperty("author_name")+ "<"+commit.getProperty("author_email")+">",
+            'parentIds': JSON.parse(commit.getProperty("parent_ids","")),
+            'placed':false,
+            'childrenPlaced':[]
+        });
+    }
+    
+
+    branches[0] = gitgraph.branch("master");
+
+    var firstNode = _.find(nodesStore, { 'parentIds': [] });
+
+    branchesBucket[0]= [];
+    branchesBucket[0].push(firstNode.full_id);
+    
+    // for each node in the node set to place
+    nodesStore.forEach(function(node,index){
+        // we find the branch the node is belongig to 
+        var actualBranchIndex = findBranchFromCommit(branchesBucket, node.full_id);
+        
+        // check if this is a merge
+        if (node.parentIds.length <2){
+            // commit the node
+            if (index == 0){
+                branches[actualBranchIndex].commit({
+                    sha1: node.id,
+                    message: node.message,
+  dotColor: "white",
+  dotSize: 10,
+  dotStrokeWidth: 15,
+                    author: node.author_name + "<" + node.author_email + ">",
+                    tag: "START"
+                });
+            }else {
+                branches[actualBranchIndex].commit({
+                    sha1: node.id,
+                    message: node.message,
+                    author: node.author_name + "<" + node.author_email + ">"
+                });
+            }
+        } else {
+            // find the other branch to merge to
+            var otherBranch = findTheOtherBranchIndex(node.full_id,actualBranchIndex,branchesBucket);
+            
+        console.log(node.full_id);
+            // merge
+            console.log("merge : "+otherBranch);
+            console.log("in : "+actualBranchIndex);
+            branches[otherBranch].merge(branches[actualBranchIndex], {  
+                sha1: node.id,
+                message: node.message,
+                author: node.author_name + "<" + node.author_email + ">" 
+            });
+            
+            // make sure the resulting commit is in the actualBranch (resulting banch of the merge)
+            var pos = branchesBucket[otherBranch].indexOf(node.full_id);
+            if (pos>-1){
+                branchesBucket[otherBranch].splice(pos,1);
+            }
+        }
+        
+        // check children count
+        node.children = findChildrens(node.full_id,nodesStore);
+        
+        // if more than one child = we need to branch for child after the first one
+        if (node.children.length>1){
+            
+            // we branch for each child following the first one
+            for (var i=1;i<node.children.length;i++ ){
+                // prepare branch info
+                branchCnt = branches.length;
+                branchesBucket[branchCnt] = [];
+                branchesBucket[branchCnt].push(node.children[i].full_id);
+
+                // create branch
+                branches[branchCnt] = branches[actualBranchIndex].branch("branch-" +branchCnt);
+
+            }
+        }
+        if (node.children.length > 0) {
+            // we add the child to the actual branch
+            branchesBucket[actualBranchIndex].push(node.children[0].full_id);
+        }
+        console.log(node.id);
+        console.table(branchesBucket);
+    });
+});
+
+    function findChildrens(commitId,nodesStore) {
+        var children = [];
+         nodesStore.forEach(function(node){
+             if (node.parentIds.indexOf(commitId)>-1){
+                 children.push(node);
+             }
+         });
+        return children;
+    }   
+    
+    function findBranchFromCommit(branchesBucket, commitId) {
+        console.log("findBranchFromCommit");
+        console.log(commitId);
+        console.log(branchesBucket);
+        var branchIndex = 0;
+        if (branchesBucket.length == 1) return 0;
+        branchesBucket.forEach(function (branchBucket, index) {
+            if (branchBucket.indexOf(commitId) > -1) {
+                branchIndex = index;
+            }
+        })
+        return branchIndex;
+    }   
+    
+
+    function checkIfParentHasChildPlaced(commitId) {
+        var test = false;
+        parents.forEach(function (parentElt) {
+            if ((parentElt.parentId == commitId)&&(parentElt.children.length)) {
+                test = true;
+            }
+        })
+        return test;
+    }
+    
+    function findTheOtherBranchIndex(commitId,actualBranch,branchesBucket){
+        debugger;
+        var otherBranchIndex = 0;
+        branchesBucket.forEach(function(brancheBucket,index){
+            if ((brancheBucket.indexOf(commitId)>-1)&&(index!=actualBranch)){
+                otherBranchIndex = index;
+            }
+        })
+        return otherBranchIndex;
+    }
+]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>SFT_drawGitGraph</name>
+ </Item>
+</AML>

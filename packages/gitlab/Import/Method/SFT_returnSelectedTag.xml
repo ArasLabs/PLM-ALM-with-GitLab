@@ -1,0 +1,12 @@
+﻿<AML>
+ <Item type="Method" id="8B77D751EAEF4304825AC577B9D7CFFD" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[var returndata = {
+    "value":document.getElementById("MainDataForm").tagsAndReleases.value,
+    "label":document.getElementById("MainDataForm").tagsAndReleases.label
+}
+window.parent.dialogArguments.dialog.close(returndata);]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>SFT_returnSelectedTag</name>
+ </Item>
+</AML>

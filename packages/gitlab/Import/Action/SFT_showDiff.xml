@@ -1,0 +1,15 @@
+﻿<AML>
+ <Item type="Action" id="93CAF5782DAB4BE8BE43F29F70026C57" action="add">
+  <item_query>&lt;Item type="{@type}" action="get"&gt;&lt;id&gt;&lt;xsl:value-of select="@id" /&gt;&lt;/id&gt;&lt;/Item&gt;</item_query>
+  <label xml:lang="en">Show Diff</label>
+  <location>server</location>
+  <method keyed_name="SFT_showDiff" type="Method">
+   <Item type="Method" action="get" select="id">
+    <name>SFT_showDiff</name>
+   </Item>
+  </method>
+  <target>window</target>
+  <type>item</type>
+  <name>SFT_showDiff</name>
+ </Item>
+</AML>

@@ -1,0 +1,71 @@
+﻿<AML>
+ <Item type="Method" id="778267D89EC248DBA2FB8998D5DA3AB5" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[// to be set on after get
+
+//if (System.Diagnostics.Debugger.Launch()) System.Diagnostics.Debugger.Break();
+
+// innovator
+var inn = this.getInnovator();
+
+string token= inn.getItemById("Variable","33E4B1E863BD4052B186D42D5F9B5AA8").getProperty("value","");
+string gitLabUrl= inn.getItemById("Variable","49536CF1DED041C48488461525C93DD0").getProperty("value","");
+
+
+// prepare the REST Call
+string html = string.Empty;
+
+var repoId = this.getProperty("source_id");
+Item repo = inn.getItemById("SFT_repository",repoId);
+
+HttpWebRequest request = (HttpWebRequest) WebRequest.Create(gitLabUrl+"api/v4/issues?project_id="+repo.getProperty("gitlabid"));
+
+
+request.Headers.Add("PRIVATE-TOKEN",token);
+
+JObject Result;
+using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+using(Stream stream = response.GetResponseStream())
+
+// parse the result
+using(StreamReader reader= new StreamReader(stream))
+{
+    html = reader.ReadToEnd();
+    html = "{'issues':"+html+"}";
+    Result = JObject.Parse(html);
+}
+
+IList<JToken> issueResults = Result["issues"].Children().ToList();
+
+Item res = null;
+
+
+// merge data
+foreach (JToken issue in issueResults.Reverse()){
+    
+    var commit = inn.newItem("SFT_issues");
+    commit.setID(inn.getNewID());
+    commit = commit.apply();
+    commit.setProperty("id", commit.getID());
+    commit.setProperty("title",issue["title"].ToString());
+    commit.setProperty("description",issue["description"].ToString());
+    commit.setProperty("glstate",issue["state"].ToString());
+    commit.setProperty("created_at",issue["created_at"].ToString());
+    commit.setProperty("updated_at",issue["updated_at"].ToString());
+    commit.setProperty("author",issue["author"]["name"].ToString());
+    commit.setProperty("web_url",issue["web_url"].ToString());
+    if (issue["milestone"].HasValues){
+        commit.setProperty("milestone",issue["milestone"]["title"].ToString());
+    }
+    
+    if(res == null)
+        res = commit;
+    else
+        res.appendItem(commit);
+}
+
+return res;]]></method_code>
+  <method_type>C#</method_type>
+  <name>SFT_getGitLabIssues</name>
+ </Item>
+</AML>

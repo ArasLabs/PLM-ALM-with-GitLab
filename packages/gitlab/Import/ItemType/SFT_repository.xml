@@ -1,0 +1,280 @@
+﻿<AML>
+ <Item type="ItemType" id="417A89EBADD64B3A852D0890415B96F7" action="add">
+  <allow_private_permission>1</allow_private_permission>
+  <auto_search>0</auto_search>
+  <enforce_discovery>1</enforce_discovery>
+  <hide_where_used>0</hide_where_used>
+  <implementation_type>table</implementation_type>
+  <instance_data>SFT_REPOSITORY</instance_data>
+  <is_dependent>0</is_dependent>
+  <is_relationship>0</is_relationship>
+  <is_versionable>0</is_versionable>
+  <label xml:lang="en">Repository</label>
+  <label_plural xml:lang="en">Repositories</label_plural>
+  <large_icon>../Images/gitlab.svg</large_icon>
+  <open_icon>../Images/gitlab.svg</open_icon>
+  <revisions keyed_name="Default" type="Revision">7FE395DD8B9F4E1090756A34B733D75E</revisions>
+  <show_parameters_tab>1</show_parameters_tab>
+  <structure_view>tabs on</structure_view>
+  <unlock_on_logout>0</unlock_on_logout>
+  <use_src_access>0</use_src_access>
+  <name>SFT_repository</name>
+  <Relationships>
+   <Item type="Property" id="0D247FC8F73E48F6B141CA99EFC3F27A" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>integer</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">commit_count</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3840</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <track_history>0</track_history>
+    <name>commit_count</name>
+   </Item>
+   <Item type="Property" id="CE8363A524EB448392F76CA0927AB85C" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <keyed_name_order>2</keyed_name_order>
+    <label xml:lang="en">Default branch</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3200</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <stored_length>32</stored_length>
+    <track_history>0</track_history>
+    <name>default_branch</name>
+   </Item>
+   <Item type="Property" id="B36B56CADEDB46138307DAD313046B6D" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>text</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Description</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3072</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <track_history>0</track_history>
+    <name>description</name>
+   </Item>
+   <Item type="Property" id="657C46B4A980475698DC6B50BD98E37F" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">gitlabid</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>4224</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <stored_length>32</stored_length>
+    <track_history>0</track_history>
+    <name>gitlabid</name>
+   </Item>
+   <Item type="Property" id="D0F6F26459D540E2B641A2E254761C03" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">http_url_to_repo</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3456</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <stored_length>256</stored_length>
+    <track_history>0</track_history>
+    <name>http_url_to_repo</name>
+   </Item>
+   <Item type="Property" id="ACB5BF59E71348BA841AC2DC3CC972A2" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <keyed_name_order>1</keyed_name_order>
+    <label xml:lang="en">name</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3712</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <stored_length>64</stored_length>
+    <track_history>0</track_history>
+    <name>name</name>
+   </Item>
+   <Item type="Property" id="E00631416F99496AADC532E12BDA8D7D" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>integer</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">repository_size</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>4096</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <track_history>0</track_history>
+    <name>repository_size</name>
+   </Item>
+   <Item type="Property" id="B787306829A340398300AC46A24FBC67" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Tag</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>4352</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <stored_length>64</stored_length>
+    <track_history>0</track_history>
+    <name>repotag</name>
+   </Item>
+   <Item type="Property" id="3E422BB9C94A4DC9B30C2782A58D5C67" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">ssh_url_to_repo</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3328</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <stored_length>256</stored_length>
+    <track_history>0</track_history>
+    <name>ssh_url_to_repo</name>
+   </Item>
+   <Item type="Property" id="C1CAAE22B0244C3783D80F14ED9A722F" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>integer</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">storage_size</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3968</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <track_history>0</track_history>
+    <name>storage_size</name>
+   </Item>
+   <Item type="Property" id="3E1304FFAB424B38B27EBCFA2B10B622" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">web_url</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3584</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <stored_length>256</stored_length>
+    <track_history>0</track_history>
+    <name>web_url</name>
+   </Item>
+   <Item type="View" id="96235A9D922A41079FA518B7554C9CC9" action="add">
+    <client>js</client>
+    <related_id keyed_name="SFT_repository" type="Form">F1BA9EA387FC4567B6CD603B00D39B6A</related_id>
+    <role keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </role>
+    <show_ssvc>0</show_ssvc>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <type>default</type>
+   </Item>
+   <Item type="Server Event" id="BEAC2F0C4C3C417BA9DF58F635756F4C" action="add">
+    <event_version>version_1</event_version>
+    <is_required>0</is_required>
+    <related_id keyed_name="SFT_getGitLabRepositories" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>SFT_getGitLabRepositories</name>
+     </Item>
+    </related_id>
+    <server_event>onAfterGet</server_event>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+   </Item>
+   <Item type="Server Event" id="FAB7F0DCE04948E0B4615FC6CD8AA689" action="add">
+    <event_version>version_1</event_version>
+    <is_required>0</is_required>
+    <related_id keyed_name="SFT_onBeforeSave" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>SFT_onBeforeSave</name>
+     </Item>
+    </related_id>
+    <server_event>onBeforeUpdate</server_event>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+   </Item>
+   <Item type="TOC Access" id="99A31E5DE37F4747B5AB9960745BD06C" action="add">
+    <related_id keyed_name="Administrators" type="Identity">2618D6F5A90949BAA7E920D1B04C7EE1</related_id>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <category>Administration</category>
+   </Item>
+   <Item type="Can Add" id="2D118C7A562C4F10A95BEBA87A511C75" action="add">
+    <can_add>1</can_add>
+    <related_id keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </related_id>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+   </Item>
+   <Item type="Allowed Permission" id="AD7D04731AF94B389B4F89B9502A2C0E" action="add">
+    <is_default>1</is_default>
+    <related_id keyed_name="Default Access" type="Permission">9122CD065CF04141B8EFE263FC80BEA4</related_id>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

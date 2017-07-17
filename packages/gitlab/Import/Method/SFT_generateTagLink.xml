@@ -1,0 +1,26 @@
+﻿<AML>
+ <Item type="Method" id="DC5CFA115A3549FEAAF817550551DA02" action="add">
+  <comments />
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[var tagName = document.thisItem.getProperty("software_repotag","");
+
+if (tagName != ""){
+    var inn = document.thisItem.getInnovator();
+    var gitLabUrl= inn.getItemById("Variable","49536CF1DED041C48488461525C93DD0").getProperty("value","");
+    console.log("------------------------------");
+    console.log(document.thisItem.getPropertyItem("software_repository"));
+    var gitLabProjectId = document.thisItem.getProperty("software_repository");
+    var gitLabProjectName = inn.getItemById("SFT_repository",gitLabProjectId).getProperty("name","");
+    
+    document.getElementById("tagLink").innerHTML=gitLabUrl+"Navigation/"+gitLabProjectName+"/tags/"+tagName;
+    document.getElementById("tagLink").setAttribute("href",gitLabUrl+"Navigation/"+gitLabProjectName+"/tags/"+tagName);
+}else{
+    document.getElementById("tagLink").innerHTML="not set";
+}
+
+
+return true;]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>SFT_generateTagLink</name>
+ </Item>
+</AML>

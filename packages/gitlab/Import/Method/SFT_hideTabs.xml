@@ -1,0 +1,72 @@
+﻿<AML>
+ <Item type="Method" id="689B57FD98DB46A38971E39394324F4C" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[/*
+  This sample code hides "BOM" and "BOM Structure" tabs for OOTB Part item.
+  In order to make this code work for FireFox, it explicitly selects the tab that should be loaded first -- "Alternates"
+*/
+
+        var tabbar;
+        var desiredTabId;
+
+        //Function to hide tabs
+        hideTabs = function ()
+        {
+            //Check if relationship grid is loaded
+            if (!isTabbarReady) {
+                setTimeout(hideTabs, 500);
+                return;
+            }
+            debugger;
+            tabbar = parent.relationships.relTabbar;
+            desiredTabId = tabbar.GetTabId("Documents");
+            tabbar.selectTab(desiredTabId);
+
+            //Check if desired tab is selected
+            if (!isTabSelected(desiredTabId)) {
+                setTimeout(hideTabs, 200);
+                return;
+            }
+
+            //Hide tabs
+            var bomTab = tabbar.GetTabId("BOM");
+            var mbomTab = tabbar.GetTabId("BOM Structure");
+            var amlTab = tabbar.GetTabId("AML");
+            var altTab = tabbar.GetTabId("Alternates");
+            var cadTab = tabbar.GetTabId("CAD Documents");
+            var goalsTab = tabbar.GetTabId("Goals");
+            tabbar.SetTabVisible(bomTab, false);
+            tabbar.SetTabVisible(mbomTab, false);
+            tabbar.SetTabVisible(amlTab, false);
+            tabbar.SetTabVisible(altTab, false);
+            tabbar.SetTabVisible(cadTab, false);
+            tabbar.SetTabVisible(goalsTab, false);
+            return;
+        };
+
+
+        //Function to check if relationship grid is loaded
+        var isTabbarReady = function ()
+        {
+            var isReady = Boolean(!parent.relationships ||
+                                    !parent.relationships.relTabbarReady ||
+                                    parent.relationships.relTabbar.GetTabOrder("|") === "");
+            return isReady;
+        };
+
+
+        //Function to check if desired tab is selected
+        var isTabSelected = function (palceholderTabId)
+        {
+            return (tabbar.GetSelectedTab() === palceholderTabId);
+        };
+
+
+        //Call hideTabs function
+        setTimeout(hideTabs, 1000);
+        return true;
+]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>SFT_hideTabs</name>
+ </Item>
+</AML>

@@ -1,0 +1,57 @@
+﻿<AML>
+ <Item type="Method" id="0F1F586774A74430B78A41B5B002D29F" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[// to be set on after get
+//if (System.Diagnostics.Debugger.Launch()) System.Diagnostics.Debugger.Break();
+
+
+// innovator
+var inn = this.getInnovator();
+
+string token= inn.getItemById("Variable","33E4B1E863BD4052B186D42D5F9B5AA8").getProperty("value","");
+string gitLabUrl= inn.getItemById("Variable","49536CF1DED041C48488461525C93DD0").getProperty("value","");
+
+
+// prepare the REST Call
+string html = string.Empty;
+System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+
+// execute the REST Call
+HttpWebRequest request = (HttpWebRequest) WebRequest.Create(gitLabUrl+"api/v4/projects");
+request.Headers.Add("PRIVATE-TOKEN",token);
+
+JObject Result;
+using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+using(Stream stream = response.GetResponseStream())
+
+// parse the result
+using(StreamReader reader= new StreamReader(stream))
+{
+    html = reader.ReadToEnd();
+    html = "{'projects':"+html+"}";
+    Result = JObject.Parse(html);
+}
+
+IList<JToken> issueResults = Result["projects"].Children().ToList();
+
+// merge data
+foreach (JToken issue in issueResults){
+    
+    for (int j =0;j<this.getItemCount();j++){
+        if (this.getItemByIndex(j).getProperty("gitlabid","")==issue["id"].ToString()){
+            this.getItemByIndex(j).setProperty("ssh_url_to_repo",issue["ssh_url_to_repo"].ToString());
+            this.getItemByIndex(j).setProperty("http_url_to_repo",issue["http_url_to_repo"].ToString());
+            // this.getItemByIndex(j).setProperty("commit_count",issue["commit_count"].ToString());
+            this.getItemByIndex(j).setProperty("default_branch",issue["default_branch"].ToString());
+            this.getItemByIndex(j).setProperty("web_url",issue["web_url"].ToString());
+            this.getItemByIndex(j).setProperty("description",issue["description"].ToString());
+            this.getItemByIndex(j).setProperty("name",issue["name"].ToString());
+        }
+    }
+}
+
+return this;]]></method_code>
+  <method_type>C#</method_type>
+  <name>SFT_getGitLabRepositories</name>
+ </Item>
+</AML>

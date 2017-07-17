@@ -1,0 +1,19 @@
+﻿<AML>
+ <Item type="Method" id="DBF39DF9057F49E2A0A3E96D23830EBB" action="add">
+  <comments />
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[var repId = document.thisItem.getProperty("software_repository","");
+var select = document.getElementById("MainDataForm").tagsAndReleases;
+var inn = document.thisItem.getInnovator();
+var tags = inn.applyMethod("SFT_getGitLabTags","<source_id>"+repId+"</source_id>");
+
+for (var i = 1;  i<tags.getItemCount()+1;i++){
+    var tag = tags.getItemByIndex(i-1);
+    select.options[i]=new Option(tag.getProperty("name"), tag.getProperty("name"));
+}
+select.options[0]=new Option("", "");
+return true;]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>SFT_loadTagList</name>
+ </Item>
+</AML>

@@ -1,0 +1,83 @@
+﻿<AML>
+ <Item type="Method" id="87EFDB383CC94CAAB2CCA0BC1798AEA3" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[var inn = document.thisItem.getInnovator();
+var commits = inn.applyMethod("SFT_getGitLabCommits","<source_id>"+document.thisItem.getID()+"</source_id>");
+    
+require([
+    "gitgraph/cytoscape.min.js"
+], function(cytoscape) {
+        
+    var eles  = [];
+    //debugger;
+    for (var i = 0; i<commits.getItemCount();i++){
+        var commit = commits.getItemByIndex(i);
+        eles.push({ 
+            group: "nodes", 
+            data: { 
+                id: commit.getProperty("full_id"),
+                title: commit.getProperty("title")
+                
+            }    
+        });
+        var parentIdsString = commit.getProperty("parent_ids","");
+        var parentIds = JSON.parse(parentIdsString);
+        parentIds.forEach(function(parentId){
+            eles.push( { 
+                group: "edges", 
+                data: { 
+                    id: parentId+commit.getProperty("full_id"),
+                    source: parentId,
+                    target:commit.getProperty("full_id")
+                }    
+            });
+        })
+    }
+    console.log(eles);
+    
+    var cy = cytoscape({
+      container: document.getElementById("cytoscapeGraph"), // container to render in
+        elements:eles,
+        wheelSensitivity: 0.1,
+      style: [ // the stylesheet for the graph
+        {
+          selector: 'node',
+          style: {
+            'background-color': '#FFF',
+            'label': 'data(title)',
+            'width':20,
+            'height':20,
+            'border-width':5,
+            'border-color': '#44A'
+          }
+        },        
+        {
+          selector: 'edge',
+          style: {
+            'width': 10,
+            'line-color': '#66A',
+            'target-arrow-color': '#66A',
+            'target-arrow-shape': 'triangle',
+            'curve-style':'bezier',
+            'target-arrow-fill':'fill',
+            'arrow-scale':0.6,
+            'control-point-distance':50,
+            'control-point-weight':0.1
+          }
+        }
+      ],
+      layout: {
+        name: 'breadthfirst',
+        nodeDimensionsIncludeLabels: true,
+        roots: commits.getItemByIndex(0).getProperty("full_id"),
+        spacingFactor: 1,
+      }
+    });
+    //var eles = cy.add(eles);
+    //cy.layout( options );
+});
+]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>SFT_drawCytoscapeGitGraph</name>
+ </Item>
+</AML>

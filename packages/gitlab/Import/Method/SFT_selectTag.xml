@@ -1,0 +1,50 @@
+﻿<AML>
+ <Item type="Method" id="DC118121A98A4C0E98AED3C0C2A917CA" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[var formName = "SFT_TagSelectionForm";
+
+if(document.thisItem.fetchLockStatus()==1){
+    var inn = document.thisItem.getInnovator();
+    var instancedPart = document.thisItem;
+    var title = "Select Repository Tag";
+    var win = aras.getMostTopWindowWithAras(window);
+    
+    var formNd = aras.getItemByName('Form', formName);
+    var width = aras.getItemProperty(formNd, 'width');
+    var height = aras.getItemProperty(formNd, 'height');
+    
+    var param = {
+        title: title,
+        formId: formNd.getAttribute('id'),
+        aras: aras,
+        dialogWidth: width,
+        dialogHeight: height,
+        content: 'ShowFormAsADialog.html',
+        item: instancedPart
+    };
+    console.log(param);
+    (win.main || win).ArasModules.Dialog.show('iframe', param).promise.then(
+    //If promise resolved then invoke callback function
+        function (dialogResult) {
+            console.log("OEFJOEJFOEJFOJEO");
+            callback(dialogResult,instancedPart);
+        }
+    );
+
+    function callback(results,instancedPart){
+        console.log("BLABALBLABLABLABLAB");
+        console.log(results);
+        if (!results) return;
+        console.log(results);
+        window.handleItemChange("software_repotag", results.value);
+        aras.AlertSuccess("Tag "+ results.value + " selected !");
+        return true;
+    }
+}else{
+    return true;
+}
+]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>SFT_selectTag</name>
+ </Item>
+</AML>

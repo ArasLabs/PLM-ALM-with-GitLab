@@ -1,0 +1,250 @@
+﻿<AML>
+ <Item type="RelationshipType" id="6FE13983968B4621BFF239646D97E20B" action="add" dependencyLevel="0">
+  <auto_search>1</auto_search>
+  <behavior>float</behavior>
+  <copy_permissions>0</copy_permissions>
+  <create_related>0</create_related>
+  <hide_in_all>0</hide_in_all>
+  <inc_rel_key_name>1</inc_rel_key_name>
+  <inc_related_key_name>1</inc_related_key_name>
+  <is_list_type>0</is_list_type>
+  <label xml:lang="en">Commits</label>
+  <new_show_related>0</new_show_related>
+  <related_notnull>0</related_notnull>
+  <related_option>2</related_option>
+  <relationship_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">
+   <Item type="ItemType" id="2DB666CDDCA1439CBCBC910E88E1B001" action="add">
+    <allow_private_permission>1</allow_private_permission>
+    <auto_search>0</auto_search>
+    <enforce_discovery>0</enforce_discovery>
+    <hide_where_used>0</hide_where_used>
+    <implementation_type>table</implementation_type>
+    <instance_data>SFT_COMMITS</instance_data>
+    <is_dependent>0</is_dependent>
+    <is_relationship>1</is_relationship>
+    <is_versionable>0</is_versionable>
+    <label xml:lang="en">Commit</label>
+    <label_plural xml:lang="en">Commits</label_plural>
+    <revisions keyed_name="Default" type="Revision">7FE395DD8B9F4E1090756A34B733D75E</revisions>
+    <show_parameters_tab>1</show_parameters_tab>
+    <structure_view>tabs off</structure_view>
+    <unlock_on_logout>0</unlock_on_logout>
+    <use_src_access>1</use_src_access>
+    <name>SFT_commits</name>
+    <Relationships>
+     <Item type="Property" id="36B16E87DEAC43338A4BEDAFBD7A7944" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">author_email</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4096</sort_order>
+      <source_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">2DB666CDDCA1439CBCBC910E88E1B001</source_id>
+      <stored_length>128</stored_length>
+      <track_history>0</track_history>
+      <name>author_email</name>
+     </Item>
+     <Item type="Property" id="BE559B7BB23A4D7EAC02808315BFECD0" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">author_name</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>3968</sort_order>
+      <source_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">2DB666CDDCA1439CBCBC910E88E1B001</source_id>
+      <stored_length>128</stored_length>
+      <track_history>0</track_history>
+      <name>author_name</name>
+     </Item>
+     <Item type="Property" id="60CA9C979CDB4E5BACB63F3EAA5EB014" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">authored_date</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4224</sort_order>
+      <source_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">2DB666CDDCA1439CBCBC910E88E1B001</source_id>
+      <stored_length>128</stored_length>
+      <track_history>0</track_history>
+      <name>authored_date</name>
+     </Item>
+     <Item type="Property" id="7E5691CCFD274E4AABECE1C3C0ED8F7B" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">committer_email</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4480</sort_order>
+      <source_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">2DB666CDDCA1439CBCBC910E88E1B001</source_id>
+      <stored_length>128</stored_length>
+      <track_history>0</track_history>
+      <name>committer_email</name>
+     </Item>
+     <Item type="Property" id="3D7A00314B57468797A1749E0B9046AD" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">committer_name</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4352</sort_order>
+      <source_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">2DB666CDDCA1439CBCBC910E88E1B001</source_id>
+      <stored_length>128</stored_length>
+      <track_history>0</track_history>
+      <name>committer_name</name>
+     </Item>
+     <Item type="Property" id="48D583520ED349C9A04D6B886DC7194D" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">gitlab_id</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>3584</sort_order>
+      <source_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">2DB666CDDCA1439CBCBC910E88E1B001</source_id>
+      <stored_length>32</stored_length>
+      <track_history>0</track_history>
+      <name>gitlab_id</name>
+     </Item>
+     <Item type="Property" id="53C15CEA7EB24B11A44B2D319886B2C3" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>text</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">message</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4608</sort_order>
+      <source_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">2DB666CDDCA1439CBCBC910E88E1B001</source_id>
+      <track_history>0</track_history>
+      <name>message</name>
+     </Item>
+     <Item type="Property" id="E369E3D519DB4E0297731F23C6DEF5AB" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>text</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">parent_ids</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4736</sort_order>
+      <source_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">2DB666CDDCA1439CBCBC910E88E1B001</source_id>
+      <track_history>0</track_history>
+      <name>parent_ids</name>
+     </Item>
+     <Item type="Property" id="D90097FE09534F00BF5482109E84BEBF" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">short_id</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>3712</sort_order>
+      <source_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">2DB666CDDCA1439CBCBC910E88E1B001</source_id>
+      <stored_length>16</stored_length>
+      <track_history>0</track_history>
+      <name>short_id</name>
+     </Item>
+     <Item type="Property" id="4B05BCA333B94EB888BCAA4423DFC411" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">title</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>3840</sort_order>
+      <source_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">2DB666CDDCA1439CBCBC910E88E1B001</source_id>
+      <stored_length>256</stored_length>
+      <track_history>0</track_history>
+      <name>title</name>
+     </Item>
+     <Item type="View" id="0B4764BE27C44A4691080FC7628FB4E8" action="add">
+      <client>js</client>
+      <related_id keyed_name="SFT_commits" type="Form">0ADCFAEDF5134AC1B4725136DBFA3226</related_id>
+      <role keyed_name="World" type="Identity">
+       <Item type="Identity" action="get" select="id">
+        <name>World</name>
+       </Item>
+      </role>
+      <show_ssvc>0</show_ssvc>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">2DB666CDDCA1439CBCBC910E88E1B001</source_id>
+      <type>default</type>
+     </Item>
+     <Item type="Server Event" id="F817566B55A0487ABB5FA932467DAAF0" action="add">
+      <event_version>version_1</event_version>
+      <is_required>0</is_required>
+      <related_id keyed_name="SFT_getGitLabCommits" type="Method">
+       <Item type="Method" action="get" select="id">
+        <name>SFT_getGitLabCommits</name>
+       </Item>
+      </related_id>
+      <server_event>onGet</server_event>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">2DB666CDDCA1439CBCBC910E88E1B001</source_id>
+     </Item>
+     <Item type="Item Action" id="4824CC0F9961471A80CBAD06FFF8EC54" action="add">
+      <related_id keyed_name="SFT_showDiff" type="Action">93CAF5782DAB4BE8BE43F29F70026C57</related_id>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="SFT_commits" type="ItemType" name="SFT_commits">2DB666CDDCA1439CBCBC910E88E1B001</source_id>
+     </Item>
+    </Relationships>
+   </Item>
+  </relationship_id>
+  <sort_order>128</sort_order>
+  <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+  <name>SFT_commits</name>
+ </Item>
+</AML>

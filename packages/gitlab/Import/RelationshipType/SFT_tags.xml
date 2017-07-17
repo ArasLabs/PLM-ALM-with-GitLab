@@ -1,0 +1,278 @@
+﻿<AML>
+ <Item type="RelationshipType" id="7B0700EB6F604A0BBE95B357388EE385" action="add" dependencyLevel="0">
+  <auto_search>1</auto_search>
+  <behavior>float</behavior>
+  <copy_permissions>0</copy_permissions>
+  <create_related>0</create_related>
+  <hide_in_all>0</hide_in_all>
+  <inc_rel_key_name>1</inc_rel_key_name>
+  <inc_related_key_name>1</inc_related_key_name>
+  <is_list_type>0</is_list_type>
+  <label xml:lang="en">Tags</label>
+  <new_show_related>0</new_show_related>
+  <related_notnull>0</related_notnull>
+  <related_option>2</related_option>
+  <relationship_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">
+   <Item type="ItemType" id="2D398C4100BF4ED5BE48845E6F2A900E" action="add">
+    <allow_private_permission>1</allow_private_permission>
+    <auto_search>0</auto_search>
+    <enforce_discovery>0</enforce_discovery>
+    <hide_where_used>0</hide_where_used>
+    <implementation_type>table</implementation_type>
+    <instance_data>SFT_TAGS</instance_data>
+    <is_dependent>0</is_dependent>
+    <is_relationship>1</is_relationship>
+    <is_versionable>0</is_versionable>
+    <revisions keyed_name="Default" type="Revision">7FE395DD8B9F4E1090756A34B733D75E</revisions>
+    <show_parameters_tab>1</show_parameters_tab>
+    <structure_view>tabs off</structure_view>
+    <unlock_on_logout>0</unlock_on_logout>
+    <use_src_access>1</use_src_access>
+    <name>SFT_tags</name>
+    <Relationships>
+     <Item type="Property" id="FC3A411A40DE4EF19119B605EA8019E2" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">author_email</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>3712</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+      <stored_length>128</stored_length>
+      <track_history>0</track_history>
+      <name>author_email</name>
+     </Item>
+     <Item type="Property" id="2932ED4393A84B7A963B8366DFB0E879" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">author_name</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>3584</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+      <stored_length>64</stored_length>
+      <track_history>0</track_history>
+      <name>author_name</name>
+     </Item>
+     <Item type="Property" id="78B80ED6C5E74042884BAEA52C58D574" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">authored_date</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>3840</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+      <stored_length>64</stored_length>
+      <track_history>0</track_history>
+      <name>authored_date</name>
+     </Item>
+     <Item type="Property" id="310E473E2FAF47FD85AA367DE3F10B59" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">commited_date</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>3968</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+      <stored_length>64</stored_length>
+      <track_history>0</track_history>
+      <name>commited_date</name>
+     </Item>
+     <Item type="Property" id="704E32744AD444279340022B721C54A2" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">commited_email</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4224</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+      <stored_length>128</stored_length>
+      <track_history>0</track_history>
+      <name>commited_email</name>
+     </Item>
+     <Item type="Property" id="A069F015635143FEA2CCD5251828AFF0" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">commited_name</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4096</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+      <stored_length>64</stored_length>
+      <track_history>0</track_history>
+      <name>commited_name</name>
+     </Item>
+     <Item type="Property" id="0D70C1D6C005491687C7A3486D3B6214" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>text</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">description</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4736</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+      <track_history>0</track_history>
+      <name>description</name>
+     </Item>
+     <Item type="Property" id="45EF20B4DC0B42A280972B4721F84880" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">full_id</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4352</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+      <stored_length>64</stored_length>
+      <track_history>0</track_history>
+      <name>full_id</name>
+     </Item>
+     <Item type="Property" id="DAE6DAB1461E4996BC2688D5B10C5F03" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>text</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">message</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4480</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+      <track_history>0</track_history>
+      <name>message</name>
+     </Item>
+     <Item type="Property" id="B1DE08A6F5A94996827854EFD34215EA" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">name</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4864</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+      <stored_length>64</stored_length>
+      <track_history>0</track_history>
+      <name>name</name>
+     </Item>
+     <Item type="Property" id="50319BA63E9B4A76A903BEACE3EED305" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>boolean</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">release</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4992</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+      <track_history>0</track_history>
+      <name>release</name>
+     </Item>
+     <Item type="Property" id="9DC200574C1848C68D7EDAFE02FF4484" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">tag_name</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>4608</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+      <stored_length>32</stored_length>
+      <track_history>0</track_history>
+      <name>tag_name</name>
+     </Item>
+     <Item type="View" id="4508141BA8DE4DFCAAAD9B8ACAEDC964" action="add">
+      <client>js</client>
+      <related_id keyed_name="SFT_tags" type="Form">F7D0D4BE048D4A2DAD2D20A448211FA5</related_id>
+      <role keyed_name="World" type="Identity">
+       <Item type="Identity" action="get" select="id">
+        <name>World</name>
+       </Item>
+      </role>
+      <show_ssvc>0</show_ssvc>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+      <type>default</type>
+     </Item>
+     <Item type="Server Event" id="EF2F0F16608F42BEAF01FCFD97F5D9DC" action="add">
+      <event_version>version_1</event_version>
+      <is_required>0</is_required>
+      <related_id keyed_name="SFT_getGitLabTags" type="Method">
+       <Item type="Method" action="get" select="id">
+        <name>SFT_getGitLabTags</name>
+       </Item>
+      </related_id>
+      <server_event>onGet</server_event>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
+     </Item>
+    </Relationships>
+   </Item>
+  </relationship_id>
+  <sort_order>512</sort_order>
+  <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+  <name>SFT_tags</name>
+ </Item>
+</AML>

@@ -1,0 +1,80 @@
+﻿<AML>
+ <Item type="Form" id="C00AB0325B714E4EB5EE68CBF377618F" action="add">
+  <category_form>0</category_form>
+  <height>150</height>
+  <stylesheet><![CDATA[../styles/default.css]]></stylesheet>
+  <width>250</width>
+  <name>SFT_TagSelectionForm</name>
+  <Relationships>
+   <Item type="Body" id="992B831FD6B044FAA162DD2044597171" action="add">
+    <sort_order>128</sort_order>
+    <source_id keyed_name="SFT_TagSelectionForm" type="Form">C00AB0325B714E4EB5EE68CBF377618F</source_id>
+    <Relationships>
+     <Item type="Field" id="B17EC649F92D4F3D8E724E4F943115A6" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>button</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Confirm</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>256</sort_order>
+      <source_id keyed_name="992B831FD6B044FAA162DD2044597171" type="Body">992B831FD6B044FAA162DD2044597171</source_id>
+      <tab_stop>1</tab_stop>
+      <x>67</x>
+      <y>65</y>
+      <name>confButton</name>
+      <Relationships>
+       <Item type="Field Event" id="8037320856804551BC989369DC42DF1D" action="add">
+        <field_event>onclick</field_event>
+        <related_id keyed_name="SFT_returnSelectedTag" type="Method">
+         <Item type="Method" action="get" select="id">
+          <name>SFT_returnSelectedTag</name>
+         </Item>
+        </related_id>
+        <sort_order>128</sort_order>
+        <source_id keyed_name="confButton" type="Field">B17EC649F92D4F3D8E724E4F943115A6</source_id>
+       </Item>
+      </Relationships>
+     </Item>
+     <Item type="Field" id="8648361C532241A2B310CE38DF7351ED" action="add">
+      <border_width>0</border_width>
+      <display_length>200</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>dropdown</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Tags &amp; Releases</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="992B831FD6B044FAA162DD2044597171" type="Body">992B831FD6B044FAA162DD2044597171</source_id>
+      <tab_stop>1</tab_stop>
+      <x>15</x>
+      <y>12</y>
+      <name>tagsAndReleases</name>
+     </Item>
+    </Relationships>
+   </Item>
+   <Item type="Form Event" id="1A8ADDDC43C4435D8ADD79BDA7C0ABF4" action="add">
+    <form_event>onload</form_event>
+    <related_id keyed_name="SFT_loadTagList" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>SFT_loadTagList</name>
+     </Item>
+    </related_id>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="SFT_TagSelectionForm" type="Form">C00AB0325B714E4EB5EE68CBF377618F</source_id>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>
