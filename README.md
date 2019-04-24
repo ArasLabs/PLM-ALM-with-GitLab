@@ -3,12 +3,20 @@ Creates a simple PLM-ALM integration using GitLab as ALM. The goal is to provide
 #### How it works
 With this project, Aras has a few federated object which are querying Gitlab through its REST webservice interface.
 
-## Project Details
+## History
 
-**Built Using:** Aras 11.0 SP9
-**Browsers Tested:**  Firefox 38 ESR, Chrome
+Project | Aras
+--------|------
+[v1.0.1](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v1.0.1) | Tested on Internet Explorer, Edge, Firefox 60 ESR, Chrome
+[v1.0.0](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v1.0.0) | First Release. Tested on Firefox ESR 38, Chrome
 
-> Though built and tested using Aras 11.0 SP9, this project should function in older releases of Aras 11.0 and Aras 10.0.
+### Supported Aras Versions
+
+Project | Aras
+--------|------
+[v1.0.1](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v1.0.1) | 11.0 SP9+, 11.0 SP12+, 11.0 SP15
+[v1.0.0](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v1.0.0) | 11.0 SP9
+
 
 ## Installation
 
