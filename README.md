@@ -47,11 +47,14 @@ Project | Aras
    1. **SFT_gitlabToken** 
 
 * you will find this information in your gitlab instance
+  * to create an access token, navigate to Profile >> Settings >> Access Tokens
+  * Name your token, set the expiration date (as needed), check off all scopes, press the create token button
+  * Copy your token somewhere safe (if you leave or refresh the page you cannot retrieve it!) and/or copy the token into the variable listed and save 
 
    2. **SFT_gitLabUrl**
 
 * this is your gitlab instance URL
-
+  * if you do not have a specific gitlab instance, use the base https://gitlab.com/ that is the default.
 You are now ready to login to Aras and try out PLM-ALM-with-GitLab
 
 ## Usage
@@ -61,12 +64,13 @@ You are now ready to login to Aras and try out PLM-ALM-with-GitLab
 2. Navigate to **Administration/Respositories** in the table of contents (TOC).
 
 3. Click the **create new** button
+  * Ignore the error that pops up concerning an Object variable. you will set it in the next step
 
-4. Edit the repository name with the name of an existing repository
+4. Enter your Project ID in the Getlabid field, save the record  
 
-5. Save close and exit
+5. Save and close the record
 
-6. List the repositories
+6. List the repositories by searching the grid
 
    ​
 
