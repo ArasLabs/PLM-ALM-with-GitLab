@@ -65,7 +65,6 @@ You are now ready to login to Aras and try out PLM-ALM-with-GitLab.
 2. Navigate to **Administration/Respositories** in the table of contents (TOC).
 
 3. Click the **create new** button
-  * Ignore the error that pops up concerning an Object variable. you will set it in the next step
 
 4. Enter your Project ID in the Getlabid field, save the record  
 
@@ -73,7 +72,7 @@ You are now ready to login to Aras and try out PLM-ALM-with-GitLab.
 
 6. List the repositories by searching the grid
 
-   ​
+
 
 ## Contributing
 
