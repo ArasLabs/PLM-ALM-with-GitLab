@@ -33,7 +33,7 @@ Project | Aras
 1. Backup your database and store the BAK file in a safe place.
 2. Open up the Aras Package Import tool.
 3. Enter your login credentials and click **Login**
-  * _Note: You must login as root for the package import to succeed!_
+		* _Note: You must login as root for the package import to succeed!_
 4. Enter the package name in the TargetRelease field.
   * Optional: Enter a description in the Description field.
 5. Enter the path to your local `..\PLM-ALM-with-GitLab\Import\imports.mf` file in the Manifest File field.
@@ -44,18 +44,19 @@ Project | Aras
 10. Copy `..\PLM-ALM-with-GitLab\Innovator` in your install folder. **WARNING** The method-config.xml file has been modified. If you have made some changes yourself make sure to do a merge (using tools like winmerge for example)
   * _Note: by default c:/Program Files/Aras/Innovator/
 11. Edit the following variables with connection information for you GitLab platform.
-   1. **SFT_gitlabToken** 
+	1. **SFT_gitlabToken** 
 
-* you will find this information in your gitlab instance
-  * to create an access token, navigate to Profile >> Settings >> Access Tokens
-  * Name your token, set the expiration date (as needed), check off all scopes, press the create token button
-  * Copy your token somewhere safe (if you leave or refresh the page you cannot retrieve it!) and/or copy the token into the variable listed and save 
+		* you will find this information in your gitlab instance
+  		* to create an access token, navigate to Profile >> Settings >> Access Tokens
+  		* Name your token, set the expiration date (as needed), check off all scopes, press the create token button
+  		* Copy your token somewhere safe (if you leave or refresh the page you cannot retrieve it!) and/or copy the token into the variable listed and save 
 
-   2. **SFT_gitLabUrl**
+	2. **SFT_gitLabUrl**
 
-* this is your gitlab instance URL
-  * if you do not have a specific gitlab instance, use the base https://gitlab.com/ that is the default.
-You are now ready to login to Aras and try out PLM-ALM-with-GitLab
+  		* this is your gitlab instance URL
+  		* if you do not have a specific gitlab instance, use the base https://gitlab.com/ that is the default.
+
+You are now ready to login to Aras and try out PLM-ALM-with-GitLab.
 
 ## Usage
 
