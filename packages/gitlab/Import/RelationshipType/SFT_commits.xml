@@ -18,7 +18,7 @@
     <auto_search>0</auto_search>
     <enforce_discovery>0</enforce_discovery>
     <hide_where_used>0</hide_where_used>
-    <implementation_type>table</implementation_type>
+    <implementation_type>federated</implementation_type>
     <instance_data>SFT_COMMITS</instance_data>
     <is_dependent>0</is_dependent>
     <is_relationship>1</is_relationship>

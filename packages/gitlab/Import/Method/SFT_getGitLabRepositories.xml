@@ -1,4 +1,4 @@
-<AML>
+﻿<AML>
  <Item type="Method" id="0F1F586774A74430B78A41B5B002D29F" action="add">
   <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
   <method_code><![CDATA[// to be set on after get
@@ -19,6 +19,11 @@ string html = string.Empty;
 // execute the REST Call
 HttpWebRequest request = (HttpWebRequest) WebRequest.Create(gitLabUrl+"api/v4/projects?owned=true");
 request.Headers.Add("PRIVATE-TOKEN",token);
+//https call requires security protocol
+ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+        | SecurityProtocolType.Tls11
+        | SecurityProtocolType.Tls12
+        | SecurityProtocolType.Ssl3;
 
 JObject Result;
 using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())

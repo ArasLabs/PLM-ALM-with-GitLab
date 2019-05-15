@@ -11,36 +11,25 @@
 
         //Function to hide tabs
         hideTabs = function ()
-        {
+        {            debugger;
+
             //Check if relationship grid is loaded
             if (!isTabbarReady) {
                 setTimeout(hideTabs, 500);
                 return;
             }
-            debugger;
             tabbar = parent.relationships.relTabbar;
-            desiredTabId = tabbar.GetTabId("Documents");
-            tabbar.selectTab(desiredTabId);
-
-            //Check if desired tab is selected
-            if (!isTabSelected(desiredTabId)) {
-                setTimeout(hideTabs, 200);
-                return;
-            }
-
+            
             //Hide tabs
-            var bomTab = tabbar.GetTabId("BOM");
-            var mbomTab = tabbar.GetTabId("BOM Structure");
-            var amlTab = tabbar.GetTabId("AML");
-            var altTab = tabbar.GetTabId("Alternates");
-            var cadTab = tabbar.GetTabId("CAD Documents");
-            var goalsTab = tabbar.GetTabId("Goals");
+            debugger;
+            var bomTab = tabbar.GetTabId("Branches");
+            var mbomTab = tabbar.GetTabId("Commits");
+            var amlTab = tabbar.GetTabId("Issues");
+            var altTab = tabbar.GetTabId("Tags");
             tabbar.SetTabVisible(bomTab, false);
             tabbar.SetTabVisible(mbomTab, false);
             tabbar.SetTabVisible(amlTab, false);
             tabbar.SetTabVisible(altTab, false);
-            tabbar.SetTabVisible(cadTab, false);
-            tabbar.SetTabVisible(goalsTab, false);
             return;
         };
 

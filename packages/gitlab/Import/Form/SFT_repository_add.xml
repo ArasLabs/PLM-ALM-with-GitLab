@@ -1,0 +1,270 @@
+﻿<AML>
+ <Item type="Form" id="2FD6D0C38460450FBB1CA565A225A443" action="add">
+  <category_form>0</category_form>
+  <height>234</height>
+  <stylesheet><![CDATA[../styles/default.css]]></stylesheet>
+  <width>699</width>
+  <name>SFT_repository_add</name>
+  <Relationships>
+   <Item type="Body" id="1D04C7D4895F4DD98311DC4C34AD03AC" action="add">
+    <bg_color>#FFFFFF</bg_color>
+    <css />
+    <sort_order>128</sort_order>
+    <source_id keyed_name="SFT_repository_add" type="Form">2FD6D0C38460450FBB1CA565A225A443</source_id>
+    <Relationships>
+     <Item type="Field" id="0ACE13D055C34B14AB770688D35D6E33" action="add">
+      <border_width>0</border_width>
+      <display_length>150</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>dropdown</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">branches</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>1792</sort_order>
+      <source_id keyed_name="1D04C7D4895F4DD98311DC4C34AD03AC" type="Body">1D04C7D4895F4DD98311DC4C34AD03AC</source_id>
+      <tab_stop>1</tab_stop>
+      <x>385</x>
+      <y>168</y>
+      <name>branches</name>
+     </Item>
+     <Item type="Field" id="8D1D7E91F13B42B5B45E7C0E2B2FEAAD" action="add">
+      <border_width>0</border_width>
+      <display_length>80</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">commit_count</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="commit_count" type="Property">0D247FC8F73E48F6B141CA99EFC3F27A</propertytype_id>
+      <sort_order>896</sort_order>
+      <source_id keyed_name="1D04C7D4895F4DD98311DC4C34AD03AC" type="Body">1D04C7D4895F4DD98311DC4C34AD03AC</source_id>
+      <tab_index>3840</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>195</x>
+      <y>170</y>
+      <name>commit_count</name>
+     </Item>
+     <Item type="Field" id="40FFC4CD7C7F4CD3B4551CF91EB96DB2" action="add">
+      <border_width>0</border_width>
+      <display_length>80</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Default branch</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="default_branch" type="Property">CE8363A524EB448392F76CA0927AB85C</propertytype_id>
+      <sort_order>256</sort_order>
+      <source_id keyed_name="1D04C7D4895F4DD98311DC4C34AD03AC" type="Body">1D04C7D4895F4DD98311DC4C34AD03AC</source_id>
+      <tab_index>3200</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>285</x>
+      <y>170</y>
+      <name>default_branch</name>
+     </Item>
+     <Item type="Field" id="D52AF134E494414EB8BDC0BA419B6505" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>textarea</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Description</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="description" type="Property">B36B56CADEDB46138307DAD313046B6D</propertytype_id>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="1D04C7D4895F4DD98311DC4C34AD03AC" type="Body">1D04C7D4895F4DD98311DC4C34AD03AC</source_id>
+      <tab_index>3072</tab_index>
+      <tab_stop>1</tab_stop>
+      <textarea_cols>200</textarea_cols>
+      <textarea_rows>30</textarea_rows>
+      <x>180</x>
+      <y>47</y>
+      <name>description</name>
+     </Item>
+     <Item type="Field" id="069098804232490E880ABF052DFF82E8" action="add">
+      <border_width>0</border_width>
+      <css>width: 400px,
+height: 200px</css>
+      <display_length_unit>px</display_length_unit>
+      <field_type>html</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <html_code><![CDATA[<link rel="stylesheet" type="text/css" href="gitgraph/gitgraph.css" />
+<canvas id="gitGraph"></canvas>]]></html_code>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>1664</sort_order>
+      <source_id keyed_name="1D04C7D4895F4DD98311DC4C34AD03AC" type="Body">1D04C7D4895F4DD98311DC4C34AD03AC</source_id>
+      <tab_stop>1</tab_stop>
+      <x>460</x>
+      <y>0</y>
+      <name>gitgraphView</name>
+     </Item>
+     <Item type="Field" id="515F17FAE916458BB41B5EF96AB7C26C" action="add">
+      <border_width>0</border_width>
+      <display_length>80</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">gitlabid</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="gitlabid" type="Property">657C46B4A980475698DC6B50BD98E37F</propertytype_id>
+      <sort_order>1280</sort_order>
+      <source_id keyed_name="1D04C7D4895F4DD98311DC4C34AD03AC" type="Body">1D04C7D4895F4DD98311DC4C34AD03AC</source_id>
+      <tab_index>4224</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>105</x>
+      <y>170</y>
+      <name>gitlabid</name>
+     </Item>
+     <Item type="Field" id="E2EBD26169A54D879B7762681C10AAED" action="add">
+      <display_length_unit>px</display_length_unit>
+      <field_type>html</field_type>
+      <html_code><![CDATA[<span id='ITEM_INFO_INTERNAL_SPAN'/>
+<script>
+  populate_ITEM_INFO_INTERNAL_SPAN = function()
+  {
+    document.getElementById('ITEM_INFO_INTERNAL_SPAN').innerHTML = aras.uiGetItemInfoTable(document.itemType);
+  }
+  window.addEventListener('load', populate_ITEM_INFO_INTERNAL_SPAN);
+</script>]]></html_code>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>1408</sort_order>
+      <source_id keyed_name="1D04C7D4895F4DD98311DC4C34AD03AC" type="Body">1D04C7D4895F4DD98311DC4C34AD03AC</source_id>
+      <tab_stop>0</tab_stop>
+      <x>0</x>
+      <y>0</y>
+      <name>item_info</name>
+     </Item>
+     <Item type="Field" id="AC7D38B5FADE4B7A98A5E8868D9696DA" action="add">
+      <border_width>1</border_width>
+      <css>color: #55F;
+font-weight: bold;
+font-size: 10pt;</css>
+      <display_length_unit>px</display_length_unit>
+      <field_type>html</field_type>
+      <font_color>#0000cd</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>10pt</font_size>
+      <font_weight>bold</font_weight>
+      <html_code><![CDATA[WEB URL : <a href="" target="_blank" id="weburl"></a><br>
+SSH URL : <a href="" target="_blank" id="sshurl"></a><br>
+HTTP URL : <a href="" target="_blank" id="httpurl"></a><br>]]></html_code>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>1536</sort_order>
+      <source_id keyed_name="1D04C7D4895F4DD98311DC4C34AD03AC" type="Body">1D04C7D4895F4DD98311DC4C34AD03AC</source_id>
+      <tab_stop>1</tab_stop>
+      <x>10</x>
+      <y>110</y>
+      <name>links</name>
+     </Item>
+     <Item type="Field" id="070AFF2F1F9D44C6A88840C6CB154623" action="add">
+      <border_width>0</border_width>
+      <display_length>200</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">name</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="name" type="Property">ACB5BF59E71348BA841AC2DC3CC972A2</propertytype_id>
+      <sort_order>768</sort_order>
+      <source_id keyed_name="1D04C7D4895F4DD98311DC4C34AD03AC" type="Body">1D04C7D4895F4DD98311DC4C34AD03AC</source_id>
+      <tab_index>3712</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>178</x>
+      <y>12</y>
+      <name>name</name>
+     </Item>
+     <Item type="Field" id="D42E37866A3F40F7B19CCA861310E108" action="add">
+      <bg_color>#ffff00</bg_color>
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>label</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>12pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Place Project ID Here ^</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>1920</sort_order>
+      <source_id keyed_name="1D04C7D4895F4DD98311DC4C34AD03AC" type="Body">1D04C7D4895F4DD98311DC4C34AD03AC</source_id>
+      <tab_stop>0</tab_stop>
+      <text_align>left</text_align>
+      <x>60</x>
+      <y>208</y>
+      <name>Project Hint</name>
+     </Item>
+     <Item type="Field" id="4F9E507C11E7401C91D3546B8ABC3CE9" action="add">
+      <border_width>0</border_width>
+      <display_length>80</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">repository_size</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="repository_size" type="Property">E00631416F99496AADC532E12BDA8D7D</propertytype_id>
+      <sort_order>1152</sort_order>
+      <source_id keyed_name="1D04C7D4895F4DD98311DC4C34AD03AC" type="Body">1D04C7D4895F4DD98311DC4C34AD03AC</source_id>
+      <tab_index>4096</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>10</x>
+      <y>170</y>
+      <name>repository_size</name>
+     </Item>
+    </Relationships>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

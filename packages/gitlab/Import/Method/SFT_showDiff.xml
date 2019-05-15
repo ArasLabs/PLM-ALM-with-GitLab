@@ -24,6 +24,11 @@ Item repo = inn.getItemById("SFT_repository",repoId);
 // execute the REST Call
 HttpWebRequest request = (HttpWebRequest) WebRequest.Create(gitLabUrl+"api/v4/projects/"+repo.getProperty("gitlabid")+"/repository/commits");
 request.Headers.Add("PRIVATE-TOKEN",token);
+//https call requires security protocol
+ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+        | SecurityProtocolType.Tls11
+        | SecurityProtocolType.Tls12
+        | SecurityProtocolType.Ssl3;
 
 JObject Result;
 using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())

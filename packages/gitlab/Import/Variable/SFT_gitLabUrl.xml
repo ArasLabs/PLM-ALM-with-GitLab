@@ -1,4 +1,4 @@
-<AML>
+﻿<AML>
  <Item type="Variable" id="49536CF1DED041C48488461525C93DD0" action="add">
   <default_value>https://gitlab.com/</default_value>
   <name>SFT_gitLabUrl</name>

@@ -93,14 +93,14 @@
       <is_keyed>0</is_keyed>
       <is_multi_valued>0</is_multi_valued>
       <is_required>0</is_required>
-      <label xml:lang="en">commited_date</label>
+      <label xml:lang="en">committed_date</label>
       <range_inclusive>0</range_inclusive>
       <readonly>0</readonly>
       <sort_order>3968</sort_order>
       <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
       <stored_length>64</stored_length>
       <track_history>0</track_history>
-      <name>commited_date</name>
+      <name>committed_date</name>
      </Item>
      <Item type="Property" id="704E32744AD444279340022B721C54A2" action="add">
       <column_alignment>left</column_alignment>
@@ -111,14 +111,14 @@
       <is_keyed>0</is_keyed>
       <is_multi_valued>0</is_multi_valued>
       <is_required>0</is_required>
-      <label xml:lang="en">commited_email</label>
+      <label xml:lang="en">committed_email</label>
       <range_inclusive>0</range_inclusive>
       <readonly>0</readonly>
       <sort_order>4224</sort_order>
       <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
       <stored_length>128</stored_length>
       <track_history>0</track_history>
-      <name>commited_email</name>
+      <name>committed_email</name>
      </Item>
      <Item type="Property" id="A069F015635143FEA2CCD5251828AFF0" action="add">
       <column_alignment>left</column_alignment>
@@ -129,14 +129,14 @@
       <is_keyed>0</is_keyed>
       <is_multi_valued>0</is_multi_valued>
       <is_required>0</is_required>
-      <label xml:lang="en">commited_name</label>
+      <label xml:lang="en">committed_name</label>
       <range_inclusive>0</range_inclusive>
       <readonly>0</readonly>
       <sort_order>4096</sort_order>
       <source_id keyed_name="SFT_tags" type="ItemType" name="SFT_tags">2D398C4100BF4ED5BE48845E6F2A900E</source_id>
       <stored_length>64</stored_length>
       <track_history>0</track_history>
-      <name>commited_name</name>
+      <name>committed_name</name>
      </Item>
      <Item type="Property" id="0D70C1D6C005491687C7A3486D3B6214" action="add">
       <column_alignment>left</column_alignment>

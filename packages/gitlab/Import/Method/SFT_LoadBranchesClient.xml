@@ -1,4 +1,4 @@
-<AML>
+﻿<AML>
  <Item type="Method" id="0274340C26114381ADCD1B0920BE903E" action="add">
   <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
   <method_code><![CDATA[var inn = document.thisItem.getInnovator();
@@ -12,12 +12,9 @@ for (var i = 0; i<branches.getItemCount();i++){
     var val = branche.getProperty("name");
     listOfVals.push({label: val, value: val});
 }
-//Need proper if statement to not rebuild if populated
-//if (select.component.state !== {list: listOfVals}){
-select.component.setState({list: listOfVals});
-    
-//}
 
+
+select.component.setState({list: listOfVals});
 ]]></method_code>
   <method_type>JavaScript</method_type>
   <name>SFT_LoadBranchesClient</name>

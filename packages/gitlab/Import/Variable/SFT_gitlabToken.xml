@@ -1,6 +1,7 @@
-<AML>
+﻿<AML>
  <Item type="Variable" id="33E4B1E863BD4052B186D42D5F9B5AA8" action="add">
-  <default_value>naVbswt7nskwwpBWqxng</default_value>
+  <default_value>Get Access Token from GitLab</default_value>
+  <value>XXXXXXXXXXXXXXXXXXXX</value>
   <name>SFT_gitlabToken</name>
  </Item>
 </AML>

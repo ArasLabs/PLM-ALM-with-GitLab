@@ -17,11 +17,42 @@ string html = string.Empty;
 
 var repoId = this.getProperty("source_id");
 Item repo = inn.getItemById("SFT_repository",repoId);
-
+// if repo is null, force response msg
+if(repo == null){
+    if (this.getAttribute("returnMode", "") == "countOnly")
+    {
+        string resString = @"<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/'>
+ <SOAP-ENV:Body>
+  <Result />
+  <Message>
+   <event name='pagemax' value='1' />
+   <event name='itemmax' value='0' />
+   <event name='items_with_no_access_count' value='0' />
+  </Message>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>";
+        Item resItem = inn.newItem();
+        resItem.loadAML(resString);
+        return resItem;
+    }
+    Item err = inn.newError("Could not find parent");
+    err.setErrorCode("0");
+    return err;
+}
+if (string.IsNullOrEmpty(repo.getProperty("gitlabid", ""))){
+    Item err = inn.newError("Project ID not set.");
+    err.setErrorCode("0");
+    return err;
+};
 HttpWebRequest request = (HttpWebRequest) WebRequest.Create(gitLabUrl+"api/v4/projects/"+repo.getProperty("gitlabid")+"/repository/tags");
 
 
 request.Headers.Add("PRIVATE-TOKEN",token);
+//https call requires security protocol
+ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+        | SecurityProtocolType.Tls11
+        | SecurityProtocolType.Tls12
+        | SecurityProtocolType.Ssl3;
 
 JObject Result;
 using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
@@ -50,9 +81,9 @@ foreach (JToken tag in issueResults.Reverse()){
     commit.setProperty("author_name",tag["commit"]["author_name"].ToString());
     commit.setProperty("author_email",tag["commit"]["author_email"].ToString());
     commit.setProperty("authored_date",tag["commit"]["authored_date"].ToString());
+    commit.setProperty("committed_name",tag["commit"]["committer_name"].ToString());
+    commit.setProperty("committed_email",tag["commit"]["committer_email"].ToString());
     commit.setProperty("committed_date",tag["commit"]["committed_date"].ToString());
-    commit.setProperty("committer_name",tag["commit"]["committer_name"].ToString());
-    commit.setProperty("committer_email",tag["commit"]["committer_email"].ToString());
     commit.setProperty("full_id",tag["commit"]["id"].ToString());
     commit.setProperty("message",tag["message"].ToString());
     if (tag["release"].HasValues){

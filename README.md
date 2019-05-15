@@ -7,14 +7,14 @@ With this project, Aras has a few federated object which are querying Gitlab thr
 
 Project | Aras
 --------|------
-[v1.0.1](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v1.0.1) | Tested on Internet Explorer, Edge, Firefox 60 ESR, Chrome
+[v2.0.0](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v2.0.0) | Updated for HTTPS usage and typeahead logic. Tested on Internet Explorer, Edge, Firefox 60 ESR, Chrome
 [v1.0.0](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v1.0.0) | First Release. Tested on Firefox ESR 38, Chrome
 
 ### Supported Aras Versions
 
 Project | Aras
 --------|------
-[v1.0.1](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v1.0.1) | 11.0 SP9+, 11.0 SP12+, 11.0 SP15
+[v2.0.0](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v2.0.0) | 11.0 SP12+, 11.0 SP15
 [v1.0.0](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v1.0.0) | 11.0 SP9
 
 
@@ -37,7 +37,7 @@ Project | Aras
 4. Enter the package name in the TargetRelease field.
   * Optional: Enter a description in the Description field.
 5. Enter the path to your local `..\PLM-ALM-with-GitLab\Import\imports.mf` file in the Manifest File field.
-6. Select **aras.labs.plmalmwithgitlab** in the Available for Import field.
+6. Select **aras.labs.gitlab** in the Available for Import field.
 7. Select Type = **Merge** and Mode = **Thorough Mode**.
 8. Click **Import** in the top left corner.
 9. Close the Aras Package Import tool.
