@@ -2,7 +2,6 @@
  <Item type="Method" id="8A45A4BCD9DF465381BB95EFCABA8E9D" action="add">
   <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
   <method_code><![CDATA[// to be set on after get
-// if (System.Diagnostics.Debugger.Launch()) System.Diagnostics.Debugger.Break();
 
 // innovator
 var inn = this.getInnovator();
