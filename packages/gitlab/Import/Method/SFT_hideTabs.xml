@@ -11,7 +11,7 @@
 
         //Function to hide tabs
         hideTabs = function ()
-        {            debugger;
+        {            
 
             //Check if relationship grid is loaded
             if (!isTabbarReady) {
