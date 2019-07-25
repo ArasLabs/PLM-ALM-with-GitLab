@@ -21,7 +21,6 @@
             tabbar = parent.relationships.relTabbar;
             
             //Hide tabs
-            debugger;
             var bomTab = tabbar.GetTabId("Branches");
             var mbomTab = tabbar.GetTabId("Commits");
             var amlTab = tabbar.GetTabId("Issues");
