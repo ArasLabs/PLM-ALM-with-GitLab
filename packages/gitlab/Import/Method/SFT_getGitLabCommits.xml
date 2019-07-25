@@ -2,7 +2,6 @@
  <Item type="Method" id="8A45A4BCD9DF465381BB95EFCABA8E9D" action="add">
   <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
   <method_code><![CDATA[// to be set on after get
-//if (System.Diagnostics.Debugger.Launch()) System.Diagnostics.Debugger.Break();
 
 // innovator
 var inn = this.getInnovator();
@@ -13,11 +12,37 @@ string gitLabUrl= inn.getItemById("Variable","49536CF1DED041C48488461525C93DD0")
 
 // prepare the REST Call
 string html = string.Empty;
-
 var repoId = this.getProperty("source_id");
 var selectedBranchName = this.getProperty("selected_branch","");
-Item repo = inn.getItemById("SFT_repository",repoId);
 
+Item repo = inn.getItemById("SFT_repository",repoId);
+// if repo is null, force response msg
+if(repo == null){
+    if (this.getAttribute("returnMode", "") == "countOnly")
+    {
+        string resString = @"<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/'>
+ <SOAP-ENV:Body>
+  <Result />
+  <Message>
+   <event name='pagemax' value='1' />
+   <event name='itemmax' value='0' />
+   <event name='items_with_no_access_count' value='0' />
+  </Message>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>";
+        Item resItem = inn.newItem();
+        resItem.loadAML(resString);
+        return resItem;
+    }
+    Item err = inn.newError("Could not find parent");
+    err.setErrorCode("0");
+    return err;
+}
+if (string.IsNullOrEmpty(repo.getProperty("gitlabid", ""))){
+    Item err = inn.newError("Project ID not set.");
+    err.setErrorCode("0");
+    return err;
+};
 HttpWebRequest request = (HttpWebRequest) WebRequest.Create(gitLabUrl+"api/v4/projects/"+repo.getProperty("gitlabid")+"/repository/commits");
 
 // execute the REST Call
@@ -26,6 +51,11 @@ if (selectedBranchName != ""){
 }
 
 request.Headers.Add("PRIVATE-TOKEN",token);
+//https call requires security protocol
+ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+        | SecurityProtocolType.Tls11
+        | SecurityProtocolType.Tls12
+        | SecurityProtocolType.Ssl3;
 
 JObject Result;
 using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
@@ -52,12 +82,13 @@ foreach (JToken issue in issueResults.Reverse()){
     commit = commit.apply();
     commit.setProperty("id", commit.getID());
     commit.setProperty("short_id",issue["short_id"].ToString());
-    commit.setProperty("full_id",issue["id"].ToString());
+    commit.setProperty("gitlab_id",issue["id"].ToString());
     commit.setProperty("title",issue["title"].ToString());
     commit.setProperty("author_name",issue["author_name"].ToString());
     commit.setProperty("author_email",issue["author_email"].ToString());
     commit.setProperty("authored_date",issue["authored_date"].ToString());
     commit.setProperty("committer_name",issue["committer_name"].ToString());
+    commit.setProperty("committer_email",issue["committer_email"].ToString());
     commit.setProperty("message",issue["message"].ToString());
     commit.setProperty("parent_ids",issue["parent_ids"].ToString());
     

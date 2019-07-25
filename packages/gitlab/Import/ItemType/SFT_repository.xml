@@ -11,8 +11,8 @@
   <is_versionable>0</is_versionable>
   <label xml:lang="en">Repository</label>
   <label_plural xml:lang="en">Repositories</label_plural>
-  <large_icon>../Images/gitlab.svg</large_icon>
-  <open_icon>../Images/gitlab.svg</open_icon>
+  <large_icon>../Images/AdditionalHeaderRows.svg</large_icon>
+  <open_icon>../Images/AdditionalHeaderRows.svg</open_icon>
   <revisions keyed_name="Default" type="Revision">7FE395DD8B9F4E1090756A34B733D75E</revisions>
   <show_parameters_tab>1</show_parameters_tab>
   <structure_view>tabs on</structure_view>
@@ -23,8 +23,8 @@
    <Item type="Property" id="0D247FC8F73E48F6B141CA99EFC3F27A" action="add">
     <column_alignment>left</column_alignment>
     <data_type>integer</data_type>
-    <is_hidden>0</is_hidden>
-    <is_hidden2>0</is_hidden2>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
     <is_indexed>0</is_indexed>
     <is_keyed>0</is_keyed>
     <is_multi_valued>0</is_multi_valued>
@@ -81,7 +81,7 @@
     <is_indexed>0</is_indexed>
     <is_keyed>0</is_keyed>
     <is_multi_valued>0</is_multi_valued>
-    <is_required>0</is_required>
+    <is_required>1</is_required>
     <label xml:lang="en">gitlabid</label>
     <range_inclusive>0</range_inclusive>
     <readonly>0</readonly>
@@ -131,8 +131,8 @@
    <Item type="Property" id="E00631416F99496AADC532E12BDA8D7D" action="add">
     <column_alignment>left</column_alignment>
     <data_type>integer</data_type>
-    <is_hidden>0</is_hidden>
-    <is_hidden2>0</is_hidden2>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
     <is_indexed>0</is_indexed>
     <is_keyed>0</is_keyed>
     <is_multi_valued>0</is_multi_valued>
@@ -148,8 +148,8 @@
    <Item type="Property" id="B787306829A340398300AC46A24FBC67" action="add">
     <column_alignment>left</column_alignment>
     <data_type>string</data_type>
-    <is_hidden>0</is_hidden>
-    <is_hidden2>0</is_hidden2>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
     <is_indexed>0</is_indexed>
     <is_keyed>0</is_keyed>
     <is_multi_valued>0</is_multi_valued>
@@ -184,8 +184,8 @@
    <Item type="Property" id="C1CAAE22B0244C3783D80F14ED9A722F" action="add">
     <column_alignment>left</column_alignment>
     <data_type>integer</data_type>
-    <is_hidden>0</is_hidden>
-    <is_hidden2>0</is_hidden2>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
     <is_indexed>0</is_indexed>
     <is_keyed>0</is_keyed>
     <is_multi_valued>0</is_multi_valued>
@@ -216,8 +216,23 @@
     <track_history>0</track_history>
     <name>web_url</name>
    </Item>
+   <Item type="View" id="38AB36D0D6954C569D8CA72B64964D68" action="add">
+    <client>js</client>
+    <display_priority>1</display_priority>
+    <related_id keyed_name="SFT_repository_add" type="Form">2FD6D0C38460450FBB1CA565A225A443</related_id>
+    <role keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </role>
+    <show_ssvc>0</show_ssvc>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="SFT_repository" type="ItemType" name="SFT_repository">417A89EBADD64B3A852D0890415B96F7</source_id>
+    <type>add</type>
+   </Item>
    <Item type="View" id="96235A9D922A41079FA518B7554C9CC9" action="add">
     <client>js</client>
+    <display_priority>2</display_priority>
     <related_id keyed_name="SFT_repository" type="Form">F1BA9EA387FC4567B6CD603B00D39B6A</related_id>
     <role keyed_name="World" type="Identity">
      <Item type="Identity" action="get" select="id">

@@ -18,6 +18,7 @@
     <Relationships>
      <Item type="Field" id="CB33FF3800FC4C52BE1D45A288A108EA" action="add">
       <border_width>0</border_width>
+      <display_length>150</display_length>
       <display_length_unit>px</display_length_unit>
       <field_type>dropdown</field_type>
       <font_color>#000000</font_color>

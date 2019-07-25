@@ -3,12 +3,20 @@ Creates a simple PLM-ALM integration using GitLab as ALM. The goal is to provide
 #### How it works
 With this project, Aras has a few federated object which are querying Gitlab through its REST webservice interface.
 
-## Project Details
+## History
 
-**Built Using:** Aras 11.0 SP9
-**Browsers Tested:**  Firefox 38 ESR, Chrome
+Project | Aras
+--------|------
+[v2.0.0](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v2.0.0) | Updated for HTTPS usage and typeahead logic. Tested on Internet Explorer, Edge, Firefox 60 ESR, Chrome
+[v1.0.0](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v1.0.0) | First Release. Tested on Firefox ESR 38, Chrome
 
-> Though built and tested using Aras 11.0 SP9, this project should function in older releases of Aras 11.0 and Aras 10.0.
+### Supported Aras Versions
+
+Project | Aras
+--------|------
+[v2.0.0](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v2.0.0) | 11.0 SP12+, 11.0 SP15
+[v1.0.0](https://github.com/ArasLabs/PLM-ALM-with-Gitlab/releases/tag/v1.0.0) | 11.0 SP9
+
 
 ## Installation
 
@@ -25,26 +33,30 @@ With this project, Aras has a few federated object which are querying Gitlab thr
 1. Backup your database and store the BAK file in a safe place.
 2. Open up the Aras Package Import tool.
 3. Enter your login credentials and click **Login**
-  * _Note: You must login as root for the package import to succeed!_
+		* _Note: You must login as root for the package import to succeed!_
 4. Enter the package name in the TargetRelease field.
   * Optional: Enter a description in the Description field.
 5. Enter the path to your local `..\PLM-ALM-with-GitLab\Import\imports.mf` file in the Manifest File field.
-6. Select **aras.labs.plmalmwithgitlab** in the Available for Import field.
+6. Select **aras.labs.gitlab** in the Available for Import field.
 7. Select Type = **Merge** and Mode = **Thorough Mode**.
 8. Click **Import** in the top left corner.
 9. Close the Aras Package Import tool.
 10. Copy `..\PLM-ALM-with-GitLab\Innovator` in your install folder. **WARNING** The method-config.xml file has been modified. If you have made some changes yourself make sure to do a merge (using tools like winmerge for example)
   * _Note: by default c:/Program Files/Aras/Innovator/
 11. Edit the following variables with connection information for you GitLab platform.
-   1. **SFT_gitlabToken** 
+	1. **SFT_gitlabToken** 
 
-* you will find this information in your gitlab instance
+		* you will find this information in your gitlab instance
+  		* to create an access token, navigate to Profile >> Settings >> Access Tokens
+  		* Name your token, set the expiration date (as needed), check off all scopes, press the create token button
+  		* Copy your token somewhere safe (if you leave or refresh the page you cannot retrieve it!) and/or copy the token into the variable listed and save 
 
-   2. **SFT_gitLabUrl**
+	2. **SFT_gitLabUrl**
 
-* this is your gitlab instance URL
+  		* this is your gitlab instance URL
+  		* if you do not have a specific gitlab instance (ex: araslabs.gitlab.com), use the base https://gitlab.com/ that is the default.
 
-You are now ready to login to Aras and try out PLM-ALM-with-GitLab
+You are now ready to login to Aras and try out PLM-ALM-with-GitLab.
 
 ## Usage
 
@@ -54,13 +66,13 @@ You are now ready to login to Aras and try out PLM-ALM-with-GitLab
 
 3. Click the **create new** button
 
-4. Edit the repository name with the name of an existing repository
+4. Enter your Project ID in the Getlabid field, save the record  
 
-5. Save close and exit
+5. Save and close the record
 
-6. List the repositories
+6. List the repositories by searching the grid
 
-   ​
+
 
 ## Contributing
 

@@ -14,10 +14,41 @@ string html = string.Empty;
 
 var repoId = this.getProperty("source_id");
 Item repo = inn.getItemById("SFT_repository",repoId);
-
+// if repo is null, force response msg
+if(repo == null){
+    if (this.getAttribute("returnMode", "") == "countOnly")
+    {
+        string resString = @"<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/'>
+ <SOAP-ENV:Body>
+  <Result />
+  <Message>
+   <event name='pagemax' value='1' />
+   <event name='itemmax' value='0' />
+   <event name='items_with_no_access_count' value='0' />
+  </Message>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>";
+        Item resItem = inn.newItem();
+        resItem.loadAML(resString);
+        return resItem;
+    }
+    Item err = inn.newError("Could not find parent");
+    err.setErrorCode("0");
+    return err;
+}
+if (string.IsNullOrEmpty(repo.getProperty("gitlabid", ""))){
+    Item err = inn.newError("Project ID not set.");
+    err.setErrorCode("0");
+    return err;
+};
 // execute the REST Call
 HttpWebRequest request = (HttpWebRequest) WebRequest.Create(gitLabUrl+"api/v4/projects/"+repo.getProperty("gitlabid")+"/repository/branches");
 request.Headers.Add("PRIVATE-TOKEN",token);
+//https call requires security protocol
+ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+        | SecurityProtocolType.Tls11
+        | SecurityProtocolType.Tls12
+        | SecurityProtocolType.Ssl3;
 
 JObject Result;
 using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())

@@ -64,7 +64,8 @@
     
 
     branches[0] = gitgraph.branch("master");
-
+    //if nodes empty, skip graph creation
+    if (!Array.isArray(nodesStore) || !nodesStore.length) { return; }
     var firstNode = _.find(nodesStore, { 'parentIds': [] });
 
     branchesBucket[0]= [];
