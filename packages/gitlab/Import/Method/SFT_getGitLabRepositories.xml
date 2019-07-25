@@ -2,8 +2,6 @@
  <Item type="Method" id="0F1F586774A74430B78A41B5B002D29F" action="add">
   <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
   <method_code><![CDATA[// to be set on after get
-//if (System.Diagnostics.Debugger.Launch()) System.Diagnostics.Debugger.Break();
-
 
 // innovator
 var inn = this.getInnovator();
@@ -14,7 +12,6 @@ string gitLabUrl= inn.getItemById("Variable","49536CF1DED041C48488461525C93DD0")
 
 // prepare the REST Call
 string html = string.Empty;
-//System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
 // execute the REST Call
 HttpWebRequest request = (HttpWebRequest) WebRequest.Create(gitLabUrl+"api/v4/projects?owned=true");
