@@ -54,7 +54,7 @@ Project | Aras
 	2. **SFT_gitLabUrl**
 
   		* this is your gitlab instance URL
-  		* if you do not have a specific gitlab instance, use the base https://gitlab.com/ that is the default.
+  		* if you do not have a specific gitlab instance (ex: araslabs.gitlab.com), use the base https://gitlab.com/ that is the default.
 
 You are now ready to login to Aras and try out PLM-ALM-with-GitLab.
 
